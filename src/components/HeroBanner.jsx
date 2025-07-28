@@ -27,7 +27,7 @@ const slides = [
 
 const HeroBanner = () => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 1500,
     slidesToShow: 1,
@@ -40,12 +40,12 @@ const HeroBanner = () => {
   };
 
   return (
-    <div className="w-full min-h-screen">
+    <div className="w-full">
       <Slider {...settings}>
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="!flex flex-col-reverse lg:flex-row items-center justify-between px-6 md:px-0 lg:px-0 py-10 lg:py-26 max-w-screen-xl mx-auto"
+            className="!flex flex-col-reverse lg:flex-row items-center justify-between px-6 md:px-0 lg:px-0 py-10 lg:pt-26 max-w-screen-xl mx-auto"
           >
             {/* Text Content */}
             <div className="w-full lg:w-1/2 text-center lg:text-left">
