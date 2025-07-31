@@ -48,7 +48,7 @@ const OurService = () => {
   ];
 
   return (
-    <section className="py-10 bg-gradient-to-br ">
+    <section className="md:py-10 bg-gradient-to-br ">
       {/* Heading */}
       <div className="text-center mt-20 mb-14">
         {/* Main Heading */}

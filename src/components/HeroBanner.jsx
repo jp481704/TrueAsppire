@@ -45,7 +45,7 @@ const HeroBanner = () => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="!flex flex-col-reverse lg:flex-row items-center justify-between px-6 md:px-0 lg:px-0 py-10 lg:pt-26 max-w-screen-xl mx-auto"
+            className="!flex flex-col-reverse lg:flex-row items-center justify-between  md:px-0 lg:px-0 md:py-10 lg:pt-26 max-w-screen-xl mx-auto"
           >
             {/* Text Content */}
             <div className="w-full lg:w-1/2 text-center lg:text-left">
@@ -58,7 +58,7 @@ const HeroBanner = () => {
               <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6">
                 {slide.content}
               </p>
-              <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold transition duration-300">
+              <button className="px-6 py-3  bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold transition duration-300">
                 Learn More
               </button>
             </div>
