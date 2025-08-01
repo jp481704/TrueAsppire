@@ -1,5 +1,5 @@
 import React from "react";
-import strategy from "../assets/images/ourStrategy.png";
+import strategy from "../assets/images/strategy.png";
 import {
   Tabs,
   TabsHeader,
