@@ -1,5 +1,5 @@
 import React from "react";
-import ourStrategy from "../assets/images/ourStrategy.png";
+import strategy from "../assets/images/ourStrategy.png";
 import {
   Tabs,
   TabsHeader,
@@ -53,7 +53,7 @@ const OurStrategy = () => {
       {/* Content */}
       <div className="flex flex-col lg:flex-row gap-10 items-center">
         <div className="w-full lg:w-1/2">
-          <img src={ourStrategy} alt="Our Strategy"  />
+          <img src={strategy} alt="Our Strategy"  />
         </div>
 
         <div className="w-full lg:w-1/2 space-y-4">
