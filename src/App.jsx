@@ -7,6 +7,7 @@ import OurValues from "./components/OurValues";
 import AboutUs from "./components/AboutUs";
 import OurStrategy from "./components/OurStrategy";
 import Footer from "./components/Footer";
+import Clients from "./components/Clients";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
   <OurValues/>
   <AboutUs/>
   <OurStrategy/>
+  <Clients/>
 </div>
 <Footer/>
 
