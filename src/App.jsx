@@ -1,30 +1,24 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import HeroBanner from "./components/HeroBanner";
-import OurService from "./components/OurService";
-import OurValues from "./components/OurValues";
-import AboutUs from "./components/AboutUs";
-import OurStrategy from "./components/OurStrategy";
 import Footer from "./components/Footer";
-import Clients from "./components/Clients";
+import About from "./Pages/About";
+import Home from "./Pages/Home";
+
 
 function App() {
-
   return (
-    <>
-<Navbar/>
-<div className="w-[90%] lg:w-[85%] max-w-[1400px] m-auto pt-16">
-  <HeroBanner />
-  <OurService />
-  <OurValues/>
-  <AboutUs/>
-  <OurStrategy/>
-  <Clients/>
-</div>
-<Footer/>
-
-    </>
+    <Router>
+      <Navbar />
+      <div className="w-[90%] lg:w-[85%] max-w-[1400px] m-auto pt-16">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
+      <Footer />
+    </Router>
   );
 }
 
