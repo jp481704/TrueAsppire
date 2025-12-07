@@ -19,14 +19,13 @@ const Navbar = () => {
     } hover:text-[#FF6A00]`;
 
   return (
-   <nav
-  className={`fixed w-full z-50 transition-all duration-300 px-4 pr-6 nav-safe ${
-    isScrolled ? "bg-white shadow-md" : "bg-white md:bg-transparent"
-  }`}
->
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300 px-4 pr-6 nav-safe ${
+        isScrolled ? "bg-white shadow-md" : "bg-white md:bg-transparent"
+      }`}
+    >
       <div className="md:max-w-[1400px]  max-w-[500px] mx-auto px-4 lg:px-0">
         <div className="flex justify-between items-center h-16">
-
           {/* Logo */}
           <div className="flex items-center text-2xl font-bold cursor-pointer">
             <span className="text-[#0057FF]">TRUE</span>
@@ -44,7 +43,7 @@ const Navbar = () => {
 
             {/* Desktop Dropdown */}
             <div
-              className="relative"
+              className="relative group"
               onMouseEnter={() => setDesktopSubmenu(true)}
               onMouseLeave={() => setDesktopSubmenu(false)}
             >
@@ -52,23 +51,26 @@ const Navbar = () => {
                 Investing ▼
               </button>
 
-              {desktopSubmenu && (
-                <div className="absolute left-0 mt-2 bg-white shadow-lg rounded-lg py-2 w-56 z-50">
-                  <NavLink
-                    to="/investing/demat"
-                    className="block px-4 py-2 hover:bg-gray-100 hover:text-[#FF6A00]"
-                  >
-                    Demat & Trading Account
-                  </NavLink>
+              {/* Dropdown stays open while hovering submenu */}
+              <div
+                className={`absolute left-0 mt-2 bg-white shadow-lg rounded-lg py-2 w-56 z-50 transition-all duration-200 ${
+                  desktopSubmenu ? "opacity-100 visible" : "opacity-0 invisible"
+                }`}
+              >
+                <NavLink
+                  to="/investing/demat"
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-[#FF6A00]"
+                >
+                  Demat & Trading Account
+                </NavLink>
 
-                  <NavLink
-                    to="/investing/mutual-funds"
-                    className="block px-4 py-2 hover:bg-gray-100 hover:text-[#FF6A00]"
-                  >
-                    Mutual Funds
-                  </NavLink>
-                </div>
-              )}
+                <NavLink
+                  to="/investing/mutual-funds"
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-[#FF6A00]"
+                >
+                  Mutual Funds
+                </NavLink>
+              </div>
             </div>
 
             <NavLink to="/insuring" className={navLinkClass}>
@@ -113,12 +115,11 @@ const Navbar = () => {
           menuOpen ? "opacity-100 max-h-screen" : "opacity-0 max-h-0"
         }`}
       >
-        <div className="bg-white px-4 py-4 space-y-4 text-sm font-medium">
-
+        <div className="bg-white px-4 py-4 space-y-3 text-base font-medium">
           <NavLink
             to="/"
             onClick={() => setMenuOpen(false)}
-            className={navLinkClass}
+            className="block w-full text-gray-700 hover:text-[#FF6A00] py-2"
           >
             Home
           </NavLink>
@@ -126,29 +127,29 @@ const Navbar = () => {
           <NavLink
             to="/about"
             onClick={() => setMenuOpen(false)}
-            className={navLinkClass}
+            className="block w-full text-gray-700 hover:text-[#FF6A00] py-2"
           >
             About
           </NavLink>
 
           {/* Mobile Dropdown */}
-          <div>
+          <div className="w-full">
             <button
               onClick={() => setMobileSubmenu(!mobileSubmenu)}
-              className="w-full text-left text-gray-700 hover:text-[#FF6A00] transition-all duration-300"
+              className="w-full text-left text-gray-700 hover:text-[#FF6A00] py-2 flex justify-between"
             >
-              Investing {mobileSubmenu ? "▲" : "▼"}
+              Investing <span>{mobileSubmenu ? "▲" : "▼"}</span>
             </button>
 
             {mobileSubmenu && (
-              <div className="pl-4 mt-2 space-y-2">
+              <div className="pl-4 space-y-2 mt-1">
                 <NavLink
                   to="/investing/demat"
                   onClick={() => {
                     setMenuOpen(false);
                     setMobileSubmenu(false);
                   }}
-                  className={navLinkClass}
+                  className="block w-full text-gray-700 hover:text-[#FF6A00] py-2"
                 >
                   Demat & Trading Account
                 </NavLink>
@@ -159,7 +160,7 @@ const Navbar = () => {
                     setMenuOpen(false);
                     setMobileSubmenu(false);
                   }}
-                  className={navLinkClass}
+                  className="block w-full text-gray-700 hover:text-[#FF6A00] py-2"
                 >
                   Mutual Funds
                 </NavLink>
@@ -170,7 +171,7 @@ const Navbar = () => {
           <NavLink
             to="/insuring"
             onClick={() => setMenuOpen(false)}
-            className={navLinkClass}
+            className="block w-full text-gray-700 hover:text-[#FF6A00] py-2"
           >
             Insuring
           </NavLink>
@@ -178,7 +179,7 @@ const Navbar = () => {
           <NavLink
             to="/why-choose-us"
             onClick={() => setMenuOpen(false)}
-            className={navLinkClass}
+            className="block w-full text-gray-700 hover:text-[#FF6A00] py-2"
           >
             Why Choose Us
           </NavLink>
@@ -186,7 +187,7 @@ const Navbar = () => {
           <NavLink
             to="/blog"
             onClick={() => setMenuOpen(false)}
-            className={navLinkClass}
+            className="block w-full text-gray-700 hover:text-[#FF6A00] py-2"
           >
             Blog / Knowledge Center
           </NavLink>
@@ -194,14 +195,14 @@ const Navbar = () => {
           <NavLink
             to="/financial-tools"
             onClick={() => setMenuOpen(false)}
-            className={navLinkClass}
+            className="block w-full text-gray-700 hover:text-[#FF6A00] py-2"
           >
             Financial Tools
           </NavLink>
 
           <a
             href="#open-account"
-            className="block bg-[#FF6A00] text-white px-4 py-2 rounded-full text-center hover:bg-orange-600 transition"
+            className="block bg-[#FF6A00] text-white px-4 py-3 rounded-full text-center font-semibold hover:bg-orange-600 transition"
           >
             Open Demat Account
           </a>
