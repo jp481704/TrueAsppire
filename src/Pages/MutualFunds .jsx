@@ -212,7 +212,7 @@ const MutualFunds = () => {
   ];
 
   return (
-    <div className="pb-20 pt-10">
+    <div className="md:pb-20 md:pt-10">
       {/* ================== HERO SECTION - MUTUAL FUNDS ================== */}
       <section className="grid lg:grid-cols-2 gap-10 items-center">
         <div data-aos="fade-right">
@@ -341,27 +341,63 @@ const MutualFunds = () => {
           SIP vs Lumpsum – Which is Right for You?
         </h2>
 
-        <div className="mt-10 overflow-x-auto">
-          <div className="min-w-[700px] bg-white border rounded-2xl shadow-lg" data-aos="fade-up">
-            <div className="grid grid-cols-3 bg-gray-50 rounded-t-2xl">
-              <div className="p-4 font-semibold text-gray-800">Feature</div>
-              <div className="p-4 font-semibold text-[#0057FF] text-center">SIP</div>
-              <div className="p-4 font-semibold text-[#FF6A00] text-center">Lumpsum</div>
-            </div>
-            {sipVsLumpsum.map((row, i) => (
-              <div
-                key={i}
-                className={`grid grid-cols-3 border-t ${
-                  i % 2 === 0 ? "bg-white" : "bg-gray-50"
-                }`}
-              >
-                <div className="p-4 text-gray-800 font-medium">{row.feature}</div>
-                <div className="p-4 text-gray-700 text-center">{row.sip}</div>
-                <div className="p-4 text-gray-700 text-center">{row.lumpsum}</div>
-              </div>
-            ))}
-          </div>
+        <div className="mt-10">
+  {/* Desktop Table */}
+  <div className="hidden md:block overflow-x-auto">
+    <div className="min-w-[700px] bg-white border rounded-2xl shadow-lg" data-aos="fade-up">
+      <div className="grid grid-cols-3 bg-gray-50 rounded-t-2xl">
+        <div className="p-4 font-semibold text-gray-800">Feature</div>
+        <div className="p-4 font-semibold text-[#0057FF] text-center">SIP</div>
+        <div className="p-4 font-semibold text-[#FF6A00] text-center">Lumpsum</div>
+      </div>
+
+      {sipVsLumpsum.map((row, i) => (
+        <div
+          key={i}
+          className={`grid grid-cols-3 border-t ${
+            i % 2 === 0 ? "bg-white" : "bg-gray-50"
+          }`}
+        >
+          <div className="p-4 text-gray-800 font-medium">{row.feature}</div>
+          <div className="p-4 text-gray-700 text-center">{row.sip}</div>
+          <div className="p-4 text-gray-700 text-center">{row.lumpsum}</div>
         </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Mobile Modern Cards */}
+  <div className="md:hidden space-y-4" data-aos="fade-up">
+    {sipVsLumpsum.map((row, i) => (
+      <div
+        key={i}
+        className="bg-white border border-gray-200 rounded-xl shadow-sm p-5 space-y-4"
+      >
+        {/* Feature Title */}
+        <div className="text-lg font-semibold text-gray-800 leading-tight">
+          {row.feature}
+        </div>
+
+        {/* SIP */}
+        <div className="flex justify-between items-center bg-blue-50 px-4 py-3 rounded-lg">
+          <span className="text-[#0057FF] font-semibold text-sm bg-white px-2 py-1 rounded-lg shadow-sm border border-blue-100">
+            SIP
+          </span>
+          <span className="text-gray-700 text-sm font-medium">{row.sip}</span>
+        </div>
+
+        {/* Lumpsum */}
+        <div className="flex justify-between items-center bg-orange-50 px-4 py-3 rounded-lg">
+          <span className="text-[#FF6A00] font-semibold text-sm bg-white px-2 py-1 rounded-lg shadow-sm border border-orange-100">
+            Lumpsum
+          </span>
+          <span className="text-gray-700 text-sm font-medium">{row.lumpsum}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
 
         <p className="mt-6 text-center text-gray-700 max-w-3xl mx-auto" data-aos="fade-up">
           If you prefer discipline and consistency, <strong>SIP</strong> is usually the best choice.  

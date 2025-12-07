@@ -251,7 +251,7 @@ const Demat = () => {
   ];
 
   return (
-    <div className="pb-20 pt-10">
+    <div className="md:pb-20 md:pt-10">
       {/* ------------------- HERO SECTION ------------------- */}
       <section className="grid lg:grid-cols-2 gap-10 items-center">
         <div data-aos="fade-right">
