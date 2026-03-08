@@ -6,6 +6,9 @@ import About from "./Pages/About";
 import Demat from "./Pages/Demat";
 import MutualFunds from "./Pages/MutualFunds ";
 import Footer from "./components/Footer";
+import LifeInsurance from "./Pages/LifeInsurance";
+import HealthInsurance from "./Pages/HealthInsurance";
+import GeneralInsurance from "./Pages/GeneralInsurance";
 
 
 function App() {
@@ -21,6 +24,10 @@ function App() {
           {/* Investing Sub Routes */}
           <Route path="/investing/demat" element={<Demat />} />
           <Route path="/investing/mutual-funds" element={<MutualFunds />} />
+          <Route path="/insuring/life-insurance" element={<LifeInsurance/>} />
+          <Route path="/insuring/health-insurance" element={<HealthInsurance/>} />
+                    <Route path="/insuring/general-insurance" element={<GeneralInsurance/>} />
+
 
         </Routes>
       </div>
